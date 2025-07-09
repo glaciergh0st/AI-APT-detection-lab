@@ -63,3 +63,63 @@ This lab simulates real-world Advanced Persistent Threat (APT) behavior in a clo
 ---
 
 ## Repository Structure
+
+- `infra/` – Terraform config for GCP lab infrastructure
+- `simulation/` – Caldera campaigns and Atomic Red Team scripts
+- `detections/`
+  - `sigma/` – Sigma rules for APT behaviors
+  - `spl/` – SPL rules for Splunk
+  - `kql/` – KQL rules for Sentinel
+  - `yara/` – YARA host detection rules
+- `notebooks/` – Jupyter notebooks for anomaly detection
+- `hunts/` – Velociraptor queries, Zeek logs, PCAPs
+- `reports/` – SOC reports, screenshots, documentation
+- `images/` – Diagrams, dashboards, architecture
+
+---
+
+## Getting Started
+
+### 1. Deploy Infrastructure in GCP
+
+- Navigate to `infra/terraform-gcp/`
+- Customize the `main.tf` file with your GCP project ID and VM specs
+- Run the following commands:
+   terraform init
+   terraform apply
+
+### 2. Install Tools on Each VM
+
+- **Red Team VM**: Install Caldera and Atomic Red Team
+- **Victim VM**: Deploy Velociraptor agent
+- **SIEM VM**: Install either Splunk + MLTK or Elastic Stack with ML
+- **Sensor VM**: Install Zeek and Suricata (using AF_PACKET or mirror)
+
+### 3. Simulate Attacks
+
+- Launch Caldera operation
+- Use Atomic Red Team to simulate MITRE ATT&CK TTPs
+- Simulate exfiltration, lateral movement, and credential dumping
+
+### 4. Detect and Analyze
+
+- Use Sigma → SPL or KQL rules to detect behaviors in logs
+- Analyze anomalies using Elastic ML or Splunk MLTK
+- Investigate endpoints with Velociraptor
+- Analyze network data with Zeek and Suricata
+
+### 5. Report Findings
+
+- Save alerts, dashboards, and query results
+- Document the attack timeline and detection quality
+- Export and publish a SOC-style report  
+
+## Example Use Cases
+- Compare AI-based vs manual threat detection
+- Evaluate anomaly models using known attacker behavior
+- SOC analysts can learn how to implement real-world APT detections
+
+## License
+
+MIT License
+  
