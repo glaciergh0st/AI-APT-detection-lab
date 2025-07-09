@@ -49,6 +49,8 @@ This lab simulates real-world Advanced Persistent Threat (APT) behavior in a clo
 | siem-vm       | Splunk or Elastic Stack              | e2-standard-2    | 2 vCPU, 8 GB RAM |
 | sensor-vm     | Zeek + Suricata                      | e2-medium        | 2 vCPU, 4 GB RAM |
 
+---
+
 ## MITRE ATT&CK Techniques (test-samples)
 
 - T1059: Command and Scripting Interpreter  
