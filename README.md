@@ -42,15 +42,12 @@ This lab simulates real-world Advanced Persistent Threat (APT) behavior in a clo
 
 ## Lab Topology (Google Cloud VMs)
 
-| VM Name           | Purpose                      | Image                  | Specs                   |
-|------------------|------------------------------|------------------------|-------------------------|
-| `redteam-vm`      | Kali Linux + Caldera + ART   | Debian/Kali Linux      | 2 vCPU, 4 GB RAM        |
-| `victim-vm`       | Windows Server 2022 + Agent  | Windows Server 2022    | 2 vCPU, 8 GB RAM        |
-| `siem-vm`         | Splunk or Elastic Stack      | Ubuntu 22.04           | 4 vCPU, 16 GB RAM       |
-| `sensor-vm`       | Zeek, Suricata               | Ubuntu 22.04           | 2 vCPU, 4 GB RAM        |
-| (Optional) `sentinel` | Azure Sentinel via Defender | Azure VM + Log Analytics | Cloud-native |
-
----
+| VM Name       | Purpose                             | GCP Machine Type | Specs           |
+|---------------|--------------------------------------|------------------|-----------------|
+| redteam-vm    | Kali + Caldera + ART                 | e2-medium        | 2 vCPU, 4 GB RAM |
+| victim-vm     | Windows Server + Velociraptor Agent  | e2-medium        | 2 vCPU, 4 GB RAM |
+| siem-vm       | Splunk or Elastic Stack              | e2-standard-2    | 2 vCPU, 8 GB RAM |
+| sensor-vm     | Zeek + Suricata                      | e2-medium        | 2 vCPU, 4 GB RAM |
 
 ## MITRE ATT&CK Techniques (test-samples)
 
